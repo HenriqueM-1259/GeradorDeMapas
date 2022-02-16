@@ -1,0 +1,74 @@
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+</style>
+<canvas id="canvas"></canvas>
+<script>
+
+    const canvas = document.getElementById("canvas");
+    const c = canvas.getContext('2d')
+    console.log(c)
+canvas.width = innerWidth;
+canvas.height = innerHeight;
+    class mapa{
+        constructor(){
+            this.Mapa = [' ','-',' ','-',' ',' --','  ',' --','  ','-',' ','-'] 
+            this. posicao = {
+                x: 0,
+                y:100
+            },
+            this.tamanho ={
+            width: 0,
+            height: 0
+            }
+      }
+       
+      
+       
+    criaMapa(){
+        debugger
+
+        for (let i = 0; i < this.Mapa.length; i++) {
+            console.log(this.Mapa[i])
+        const element = this.Mapa[i];
+        console.log(element)
+      
+        if(this.Mapa[i] === '-'){
+            c.fillRect(this.posicao.x += 10,this.posicao.y,this.tamanho.width + 30,this.tamanho.height + 15)
+           
+        }else if(this.Mapa[i] === ' '){
+           
+            this.posicao.x += 25
+            this.posicao.y + 0
+            
+        }else if(this.Mapa[i] === ' --'){
+            c.fillRect(this.posicao.x += 20,this.posicao.y,this.tamanho.width + 40,this.tamanho.height + 35)
+           
+        }else if(this.Mapa[i] === '  '){
+           
+           this.posicao.x += 40
+           this.posicao.y + 0
+         }
+        
+        
+        console.log("posição: " + this.posicao.x, "X " + this.posicao.y)
+        console.log("tamanho: " + this.tamanho.width, "X " + this.tamanho.height)
+        
+    }
+    console.log(this.tamanho)
+    console.log(this.posicao)
+    }
+
+    
+}
+
+
+
+maps = new mapa
+maps.criaMapa();
+
+
+    
+</script>
